@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  gen:
+  generate:
     runs-on: ubuntu-latest
     steps:
       - name: Generate
