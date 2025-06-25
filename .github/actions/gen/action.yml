@@ -25,6 +25,6 @@ runs:
 
     - name: Run generator
       shell: bash
-      run: go run cmd/main.go
+      run: go run cmd/main.go gen
       env:
         CLI_REPO: ${{ inputs.repo }}
