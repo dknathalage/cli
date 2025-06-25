@@ -1,13 +1,13 @@
-name: 'Generate CLI'
-description: 'Generate CLI code and documentation'
+name: "Generate CLI"
+description: "Generate Config Code"
 
 inputs:
   repo:
-    description: 'Repository to generate code for'
+    description: "Repository to generate code for"
     required: true
 
 runs:
-  using: 'composite'
+  using: "composite"
   steps:
     - name: Checkout repository
       uses: actions/checkout@v4
@@ -17,7 +17,7 @@ runs:
     - name: Set up Go
       uses: actions/setup-go@v4
       with:
-        go-version: '1.23'
+        go-version: "1.23"
 
     - name: Install dependencies
       shell: bash
@@ -25,4 +25,6 @@ runs:
 
     - name: Run generator
       shell: bash
-      run: go run main.go generate --repo ${{ inputs.repo }}
+      run: go run cmd/main.go
+      env:
+        CLI_REPO: ${{ inputs.repo }}
