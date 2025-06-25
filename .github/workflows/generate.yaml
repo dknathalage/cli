@@ -1,3 +1,5 @@
+name: Generate Config Code
+
 on:
   push:
     branches:
