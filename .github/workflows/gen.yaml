@@ -1,0 +1,15 @@
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  gen:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate
+        uses: dknathalage/cli/.github/actions/gen@main
+        with:
+          repo: dknathalage/cli
